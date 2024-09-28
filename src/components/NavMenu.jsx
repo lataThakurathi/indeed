@@ -40,7 +40,8 @@ const NavItem = (props) => {
 
     const directionsClassMap = {
         horizontal: "border-b-2",
-        vertical: "w-full px-8 font-bold text-base border-b border-b-gray-300",
+        vertical:
+            "w-full px-8 font-bold text-[1rem] border-b border-b-gray-200",
     };
 
     return (

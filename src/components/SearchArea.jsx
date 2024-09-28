@@ -27,7 +27,9 @@ const SearchArea = () => {
                     <div
                         className="h-11 w-full flex border border-gray-500 rounded-lg px-3 cursor-text  items-center justify-between md:hidden"
                         onClick={openSearchDrawer}>
-                        <p className="font-bold ">Start your search here</p>
+                        <p className="font-bold text-gray-700">
+                            Start your search here
+                        </p>
                         <img src="/search.svg" alt="" />
                     </div>
                     {createPortal(
@@ -65,7 +67,7 @@ const Label = (props) => {
     const { children, className, ...otherProps } = props;
 
     return (
-        <label className="font-bold text-gray-800 mb-1" {...otherProps}>
+        <label className="font-bold text-gray-700 mb-1" {...otherProps}>
             {children}
         </label>
     );
@@ -92,7 +94,7 @@ const SearchForm = (props) => {
                 <Input placeholder="Job Title" id="what-job" type="text" />
             </InputControl>
             <InputControl className="flex">
-                <Label htmlFor="location">What</Label>
+                <Label htmlFor="location">Where</Label>
                 <Input placeholder="Location" id="location" type="text" />
             </InputControl>
             <button className="font-bold h-11 rounded-lg px-4 bg-primary-300 text-white block">
