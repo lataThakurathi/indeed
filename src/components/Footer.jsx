@@ -10,7 +10,7 @@ import {
 
 const Footer = () => {
     return (
-        <footer className="bg-white mt-auto py-16 bg-black">
+        <footer className="mt-auto py-16 bg-black">
             <Container className="grid md:grid-cols-[1fr_3fr_1fr] grid-cols-1 gap-8 mb-8">
                 <div>
                     <img src="/indeed-white.svg" alt="" className="h-10" />
