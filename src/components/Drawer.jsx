@@ -16,7 +16,7 @@ const Drawer = (props) => {
             ref={drawerRef}
             className={clsx(
                 isOpen ? "visible opacity-100" : "invisible opacity-0",
-                "absolute h-screen w-screen duration-300 top-0 left-0 bg-black/25 transition-all overflow-hidden",
+                "fixed h-screen w-screen duration-300 top-0 left-0 bg-black/25 transition-all overflow-hidden z-10",
                 className
             )}
             onClick={(e) => {
