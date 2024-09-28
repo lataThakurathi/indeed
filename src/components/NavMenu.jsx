@@ -38,24 +38,22 @@ const NavMenu = (props) => {
 const NavItem = (props) => {
     const { navItem, withDivider = false, withChevron, direction } = props;
 
-    const directionsClassMap = {
-        horizontal: "border-b-2",
-        vertical:
-            "w-full px-8 font-bold text-[1rem] border-b border-b-gray-300",
-    };
-
     return (
         <>
             <li className={clsx(direction === "horizontal" ? "" : "w-full")}>
                 <a
                     href={navItem.path}
                     className={clsx(
-                        "flex text-gray-700 hover:border-b-primary items-center text-sm justify-between h-16",
+                        "flex text-gray-700 hover:border-b-primary items-center justify-between h-16",
                         navItem?.active
                             ? "border-b-primary"
-                            : " border-b-transparent",
+                            : direction === "horizontal"
+                            ? "border-b-transparent"
+                            : "",
                         navItem?.className,
-                        directionsClassMap[direction]
+                        direction === "horizontal"
+                            ? "border-b-2 text-sm"
+                            : "w-full px-8 font-bold text-base border-b border-b-gray-200"
                     )}>
                     {navItem.label}
                     {withChevron ? (
