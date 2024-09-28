@@ -41,7 +41,7 @@ const DrawerHead = (props) => {
     return (
         <div className="h-navHeight flex items-end px-8 justify-center flex-col w-full flex-end">
             <button
-                className="w-12 text-gray-600 h-12 rounded-md flex items-center justify-center hover:bg-primary-50 active:scale-95"
+                className="w-12 h-12 rounded-md flex items-center justify-center hover:bg-primary-50 active:scale-95"
                 onClick={close}>
                 <img src="/cross.svg" className="h-6 w-6" alt="" />
             </button>

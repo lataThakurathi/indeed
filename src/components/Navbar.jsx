@@ -33,7 +33,7 @@ const Navbar = () => {
     } = useToggle(false);
 
     return (
-        <nav className="h-navHeight bg-white">
+        <nav className="h-navHeight bg-white border-b border-b-white">
             <Container className="flex h-full gap-6 items-end">
                 <img
                     src="/indeed.svg"
@@ -41,11 +41,16 @@ const Navbar = () => {
                     className="w-28 self-center"
                 />
                 <div className="hidden lg:flex justify-between w-full">
-                    <NavMenu direction="horizontal" navItems={mainLinks} />
+                    <NavMenu
+                        direction="horizontal"
+                        withChevron={false}
+                        navItems={mainLinks}
+                    />
                     <NavMenu
                         direction="horizontal"
                         navItems={secondaryLinks}
                         withDivider
+                        withChevron={false}
                     />
                 </div>
                 <a
