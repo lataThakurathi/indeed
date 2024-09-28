@@ -204,7 +204,7 @@ const BrowseJobsSection = () => {
     const [selectedIndustryId, setSelectedIndustryId] = useState(1);
 
     return (
-        <section className="pt-16 md:pt-24">
+        <section className="pt-16 md:pt-24 mb-12">
             <Container className="max-w-5xl relative">
                 <h2 className="font-bold text-xl md:text-2xl text-gray-800 mb-4">
                     Browse top paying jobs by industry
