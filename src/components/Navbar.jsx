@@ -4,7 +4,7 @@ import Drawer from "./Drawer";
 import NavMenu from "./NavMenu";
 
 const mainLinks = [
-    { label: "Home", path: "/company-reviews" },
+    { label: "Home", path: "/" },
     { label: "Company Reviews", path: "/company-reviews" },
     { label: "Find Salaries", path: "/find-salaries", active: true },
 ];
@@ -15,6 +15,14 @@ const secondaryLinks = [
         className: "font-bold text-primary-300",
     },
     { label: "Employers/Post Job", path: "/post-job" },
+];
+const tertiaryLinks = [
+    {
+        label: "Create Your Resume",
+        path: "/create-your-resume",
+    },
+    { label: "Change Country", path: "/change-country" },
+    { label: "Help Center", path: "Help Center" },
 ];
 
 const Navbar = () => {
@@ -33,9 +41,9 @@ const Navbar = () => {
                     className="w-28 self-center"
                 />
                 <div className="hidden lg:flex justify-between w-full">
-                    <NavMenu direction="vertical" navItems={mainLinks} />
+                    <NavMenu direction="horizontal" navItems={mainLinks} />
                     <NavMenu
-                        direction="vertical"
+                        direction="horizontal"
                         navItems={secondaryLinks}
                         withDivider
                     />
@@ -46,13 +54,23 @@ const Navbar = () => {
                     <img src="/user.svg" alt="" className="h-7 w-7" />
                     Sign In
                 </a>
-                <button className="lg:hidden min-w-12 min-h-12 rounded-md flex items-center justify-center hover:bg-primary-50 active:scale-95 self-center">
+                <button
+                    className="lg:hidden min-w-12 min-h-12 rounded-md flex items-center justify-center hover:bg-primary-50 active:scale-95 self-center"
+                    onClick={openDrawer}>
                     <img src="/hamburger.svg" className="h-6 w-6" alt="" />
                 </button>
                 <Drawer
                     isOpen={isDrawerOpen}
                     open={openDrawer}
-                    close={closeDrawer}></Drawer>
+                    close={closeDrawer}
+                    className="md:hidden md:block">
+                    <NavMenu navItems={mainLinks} direction="vertical" />
+                    <NavMenu
+                        navItems={tertiaryLinks}
+                        direction="vertical"
+                        className="border-t-[6px] border-t-gray-200"
+                    />
+                </Drawer>
             </Container>
         </nav>
     );
