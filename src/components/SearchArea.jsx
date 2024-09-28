@@ -15,7 +15,7 @@ const SearchArea = () => {
         <div className="absolute w-full -translate-y-[3.75rem]">
             <Container className="max-w-5xl  relative">
                 <img
-                    src="/public/suitcase.svg"
+                    src="/suitcase.svg"
                     alt=""
                     className="w-[86px] md:w-40 absolute right-16 bottom-full md:translate-y-[8px] translate-y-[5px]"
                 />

@@ -1,8 +1,8 @@
 export const socialLinks = [
-    { href: "", imgSrc: "/public/x.svg" },
-    { href: "", imgSrc: "/public/facebook.svg" },
-    { href: "", imgSrc: "/public/instagram.svg" },
-    { href: "", imgSrc: "/public/youtube.svg" },
+    { href: "", imgSrc: "/x.svg" },
+    { href: "", imgSrc: "/facebook.svg" },
+    { href: "", imgSrc: "/instagram.svg" },
+    { href: "", imgSrc: "/youtube.svg" },
 ];
 
 export const browse = [
@@ -30,7 +30,7 @@ export const footerCopyrightLink = [
     {
         href: "",
         children: "Your Privacy Choices",
-        imgSrc: "/public/cross-check.svg",
+        imgSrc: "/cross-check.svg",
     },
     { href: "", children: "Accessibility at Indeed" },
     { href: "", children: "Privacy Center Ads" },
