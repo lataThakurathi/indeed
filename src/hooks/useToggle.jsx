@@ -12,7 +12,6 @@ const useToggle = (initialState = false) => {
     const toggle = () => {
         setIsOpen((oldOpen) => !oldOpen);
     };
-    console.log(isOpen);
 
     return { isOpen, open, close, toggle };
 };

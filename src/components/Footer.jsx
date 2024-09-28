@@ -1,36 +1,12 @@
 import React from "react";
 import Container from "./Container";
-
-const browse = [
-    { label: "Career Explorer", path: "/career-explorer" },
-    { label: "Hiring Lab", path: "/hiring-lab" },
-    { label: "Career Advice", path: "/career-advice" },
-    { label: "Browse Jobs", path: "/browse-jobs" },
-    { label: "Browse Companies", path: "/browse-companies" },
-];
-
-const resources = [
-    { label: "Resume Help", path: "/resume-help" },
-    { label: "Salaries", path: "/salaries" },
-    { label: "Indeed Events", path: "/indeed-events" },
-    { label: "Work at Indeed", path: "/work-at-indeed" },
-];
-
-const additionalInfo = [
-    { label: "Countries", path: "/countries" },
-    { label: "About", path: "/about" },
-    { label: "Help Center", path: "/help-center" },
-    { label: "ESG at Indeed", path: "/esg-at-indeed" },
-];
-const footerCopyrightLink = [
-    {
-        href: "",
-        children: "Your Privacy Choices",
-        imgSrc: "/public/cross-check.svg",
-    },
-    { href: "", children: "Accessibility at Indeed" },
-    { href: "", children: "Privacy Center Ads" },
-];
+import {
+    socialLinks,
+    browse,
+    resources,
+    additionalInfo,
+    footerCopyrightLink,
+} from "../data/footerLinks";
 
 const Footer = () => {
     return (
@@ -40,9 +16,7 @@ const Footer = () => {
                     <img src="/indeed-white.svg" alt="" className="h-10" />
                 </div>
                 <div>
-                    <h3 className="text-white font-bold text-xl mb-4">
-                        Explore Indeed
-                    </h3>
+                    <FooterColumnTitle>Explore Indeed</FooterColumnTitle>
                     <div className="flex flex-col sm:flex-row gap-4">
                         <FooterColumnList links={browse} />
                         <FooterColumnList links={resources} />
@@ -50,46 +24,16 @@ const Footer = () => {
                     </div>
                 </div>
                 <div>
-                    <h3 className="text-white font-bold text-xl mb-4">
-                        Follow Us
-                    </h3>
+                    <FooterColumnTitle>Follow Us</FooterColumnTitle>
                     <ul className="flex gap-x-8 gap-y-4 flex-col lg:flex-row">
-                        <li>
-                            <a href="">
-                                <img
-                                    src="/public/x.svg"
-                                    alt=""
-                                    className="h-4"
+                        {socialLinks.map((link, index) => (
+                            <li key={index}>
+                                <SocialLink
+                                    href={link.href}
+                                    imgSrc={link.imgSrc}
                                 />
-                            </a>
-                        </li>
-                        <li>
-                            <a href="">
-                                <img
-                                    src="/public/facebook.svg"
-                                    alt=""
-                                    className="h-4"
-                                />
-                            </a>
-                        </li>
-                        <li>
-                            <a href="">
-                                <img
-                                    src="/public/instagram.svg"
-                                    alt=""
-                                    className="h-4"
-                                />
-                            </a>
-                        </li>
-                        <li>
-                            <a href="">
-                                <img
-                                    src="/public/youtube.svg"
-                                    alt=""
-                                    className="h-4"
-                                />
-                            </a>
-                        </li>
+                            </li>
+                        ))}
                     </ul>
                 </div>
             </Container>
@@ -109,6 +53,12 @@ const Footer = () => {
         </footer>
     );
 };
+
+const SocialLink = ({ href, imgSrc }) => (
+    <a href={href}>
+        <img src={imgSrc} alt="" className="h-4" />
+    </a>
+);
 
 const FooterCopyrightLink = ({ href, children, imgSrc }) => (
     <a
@@ -142,7 +92,7 @@ const FooterColumnList = (props) => {
 const FooterColumnTitle = (props) => {
     const { children } = props;
 
-    return <h3>{children}</h3>;
+    return <h3 className="text-white font-bold text-xl mb-4">{children}</h3>;
 };
 
 export default Footer;

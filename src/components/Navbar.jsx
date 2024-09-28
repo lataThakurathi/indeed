@@ -2,28 +2,7 @@ import useToggle from "../hooks/useToggle";
 import Container from "./Container";
 import Drawer from "./Drawer";
 import NavMenu from "./NavMenu";
-
-const mainLinks = [
-    { label: "Home", path: "/" },
-    { label: "Company Reviews", path: "/company-reviews" },
-    { label: "Find Salaries", path: "/find-salaries", active: true },
-];
-const secondaryLinks = [
-    {
-        label: "Sign In",
-        path: "/sign-in",
-        className: "font-bold text-primary-300",
-    },
-    { label: "Employers/Post Job", path: "/post-job" },
-];
-const tertiaryLinks = [
-    {
-        label: "Create Your Resume",
-        path: "/create-your-resume",
-    },
-    { label: "Change Country", path: "/change-country" },
-    { label: "Help Center", path: "Help Center" },
-];
+import { mainLinks, secondaryLinks, tertiaryLinks } from "../data/navBarLinks";
 
 const Navbar = () => {
     const {
@@ -68,7 +47,7 @@ const Navbar = () => {
                     isOpen={isDrawerOpen}
                     open={openDrawer}
                     close={closeDrawer}
-                    className="md:hidden md:block">
+                    className="md:hidden block">
                     <NavMenu navItems={mainLinks} direction="vertical" />
                     <NavMenu
                         navItems={tertiaryLinks}
