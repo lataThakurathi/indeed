@@ -5,8 +5,14 @@ export default {
         extend: {
             colors: {
                 primary: {
-                    DEFAULT: "#0d2d5e",
+                    50: "hsl(216deg, 76%, 95%)",
+                    300: "hsl(216deg, 76%, 41%)",
+                    400: "hsl(216deg, 76%, 31%)",
+                    DEFAULT: "hsl(216deg, 76%, 21%)",
                 },
+            },
+            height: {
+                navHeight: "73px",
             },
         },
     },
